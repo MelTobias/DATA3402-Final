@@ -86,6 +86,8 @@ Metric: Accuracy and classification report (precision, recall, F1-score).
 Visualizations:
 * Confusion matrices for each model.
 
+![](scores.png)
+
 ### Conclusions
 
 * Random Forest performed best with the highest accuracy and strong generalization.
