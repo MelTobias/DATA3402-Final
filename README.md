@@ -10,7 +10,7 @@
 The goal is to classify mushrooms as edible or poisonous based solely on physical characteristics. The dataset contains only categorical features, making this a good test of models that can handle non-numeric input effectively.
 
 Approach:
-This project frames the problem as a binary classification task. The data was cleaned and label encoded, and three models were explored:
+This project frames the problem as a binary classification task. The data was cleaned and label encoded, and two models were explored.
 * Random Forest
 * K-Nearest Neighbors
 
