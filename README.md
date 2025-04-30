@@ -1,118 +1,135 @@
 ![](UTA-DataScience-Logo.png)
 
-# Project Title
+# Mushroom Classification
 
-* **One Sentence Summary** Ex: This repository holds an attempt to apply LSTMs to Stock Market using data from
-"Get Rich" Kaggle challenge (provide link). 
+* This repository holds an attempt to classify mushrooms as edible or poisonous using various machine learning models on data from the Kaggle Mushroom Classification Dataset (https://www.kaggle.com/datasets/uciml/mushroom-classification/data). 
 
 ## Overview
 
-* This section could contain a short paragraph which include the following:
-  * **Definition of the tasks / challenge**  Ex: The task, as defined by the Kaggle challenge is to use a time series of 12 features, sampled daily for 1 month, to predict the next day's price of a stock.
-  * **Your approach** Ex: The approach in this repository formulates the problem as regression task, using deep recurrent neural networks as the model with the full time series of features as input. We compared the performance of 3 different network architectures.
-  * **Summary of the performance achieved** Ex: Our best model was able to predict the next day stock price within 23%, 90% of the time. At the time of writing, the best performance on Kaggle of this metric is 18%.
+* Definition of the task/challenge:
+The goal is to classify mushrooms as edible or poisonous based solely on physical characteristics. The dataset contains only categorical features, making this a good test of models that can handle non-numeric input effectively.
 
-## Summary of Workdone
+Approach:
+This project frames the problem as a binary classification task. The data was cleaned and label encoded, and three models were explored:
+* Random Forest
+* K-Nearest Neighbors
 
-Include only the sections that are relevant an appropriate.
+Performance summary:
+The best-performing model was Random Forest, which achieved a perfect score. The classification report and confusion matrix confirm strong performance across both classes.
+
+## Summary of Work Done
 
 ### Data
 
-* Data:
-  * Type: For example
-    * Input: medical images (1000x1000 pixel jpegs), CSV file: image filename -> diagnosis
-    * Input: CSV file of features, output: signal/background flag in 1st column.
-  * Size: How much data?
-  * Instances (Train, Test, Validation Split): how many data points? Ex: 1000 patients for training, 200 for testing, none for validation
+Data:
+* Type: CSV file with 22 categorical features and one target label (edible or poisonous).
+* Size: 8124 instances total.
+
+Split:
+* Training set: 80%
+* Testing set: 20%
 
 #### Preprocessing / Clean up
-
-* Describe any manipulations you performed to the data.
+* Missing values were removed.
+* All categorical variables were label encoded.
+* The dataset was scaled as needed depending on the model.
 
 #### Data Visualization
 
-Show a few visualization of the data and say a few words about what you see.
+* Count plots for class distribution and features.
+* Correlation heatmap using label-encoded values.
+* Feature importance visualization from Random Forest.
+
+![](graphs.png)
+
+From the visualizations, we observe:
+* Odor is a highly distinguishing feature — certain odors (like n and f) are almost exclusively associated with either edible or poisonous mushrooms.
+* Gill color and spore print color also show strong class separation, with some values appearing almost exclusively in one class.
+* Features like veil-type and ring-number show little to no variation and may not contribute significantly to classification performance.
+* Bruises and gill-spacing offer moderate separation, possibly aiding model learning.
+* Other features like cap-shape or habitat are more evenly distributed across classes and might be less predictive individually but still useful when combined with others.
 
 ### Problem Formulation
 
-* Define:
-  * Input / Output
-  * Models
-    * Describe the different models you tried and why.
-  * Loss, Optimizer, other Hyperparameters.
+* Input: 22 physical characteristics of mushrooms (all categorical).
+* Output: Binary class (edible or poisonous).
+
+Models
+* Random Forest Classifier (performed best).
+* K-Nearest Neighbors (used for comparison).
+
+Hyperparameters:
+* Random Forest: default parameters
+* KNN: tested for different k values
 
 ### Training
 
-* Describe the training:
-  * How you trained: software and hardware.
-  * How did training take.
-  * Training curves (loss vs epoch for test/train).
-  * How did you decide to stop training.
-  * Any difficulties? How did you resolve them?
+Environment:
+* Python (Jupyter Notebook & Google Collab)
+* Libraries: pandas, numpy, matplotlib, seaborn, scikit-learn
+
+Training time:
+* Very short (dataset is small, most models train in seconds on CPU).
+
+Stopping criteria:
+* No early stopping is required due to the short training time.
+
+Challenges:
+* Categorical-only data required label encoding; some models were more sensitive to feature scaling.
 
 ### Performance Comparison
 
-* Clearly define the key performance metric(s).
-* Show/compare results in one table.
-* Show one (or few) visualization(s) of results, for example ROC curves.
+Metric: Accuracy and classification report (precision, recall, F1-score).
+
+![](table.png)
+
+Visualizations:
+* Confusion matrices for each model.
 
 ### Conclusions
 
-* State any conclusions you can infer from your work. Example: LSTM work better than GRU.
+* Random Forest performed best with the highest accuracy and strong generalization.
+* The dataset was clean and well-balanced, which helped model performance.
 
 ### Future Work
 
-* What would be the next thing that you would try.
-* What are some other studies that can be done starting from here.
+* Test more advanced models (e.g., XGBoost, LightGBM).
+* Try feature selection to reduce dimensionality.
+* Investigate model interpretability tools (e.g., SHAP values).
 
 ## How to reproduce results
 
-* In this section, provide instructions at least one of the following:
-   * Reproduce your results fully, including training.
-   * Apply this package to other data. For example, how to use the model you trained.
-   * Use this package to perform their own study.
-* Also describe what resources to use for this package, if appropirate. For example, point them to Collab and TPUs.
+To fully reproduce the results of this project, follow the steps to reproduce this project's results. You can run the notebook locally or in a cloud-based environment like Google Colab.
+
+Run in Google Colab (Recommended)
+1. Open Google Colab.
+2. Upload the file DATA3402_Final.ipynb.
+3. Download the dataset mushrooms.csv from this Kaggle page.
+4. Upload mushrooms.csv to the same Colab session.
+5. Run all cells to:
+   * Load and preprocess the data
+   * Train and evaluate the models
+   * View visualizations and metrics
+No GPU or TPU is required due to the small size of the dataset and models.
 
 ### Overview of files in repository
 
-* Describe the directory structure, if any.
-* List all relavent files and describe their role in the package.
-* An example:
-  * utils.py: various functions that are used in cleaning and visualizing data.
-  * preprocess.ipynb: Takes input data in CSV and writes out data frame after cleanup.
-  * visualization.ipynb: Creates various visualizations of the data.
-  * models.py: Contains functions that build the various models.
-  * training-model-1.ipynb: Trains the first model and saves model during training.
-  * training-model-2.ipynb: Trains the second model and saves model during training.
-  * training-model-3.ipynb: Trains the third model and saves model during training.
-  * performance.ipynb: loads multiple trained models and compares results.
-  * inference.ipynb: loads a trained model and applies it to test data to create kaggle submission.
-
-* Note that all of these notebooks should contain enough text for someone to understand what is happening.
+* MushroomClassification.ipynb: The first look at the code, with very basic tests and cleaning, a rough draft.
+* DATA3402_Final: The final code includes full analysis, preprocessing, modeling, and evaluation.
+* submission.csv: The file that was created from the final code, showing the ID of the mushroom and the prediction of whether it is edible or poisonous. 
 
 ### Software Setup
-* List all of the required packages.
-* If not standard, provide or point to instruction for installing the packages.
-* Describe how to install your package.
 
-### Data
-
-* Point to where they can download the data.
-* Lead them through preprocessing steps, if necessary.
-
-### Training
-
-* Describe how to train the model
-
-#### Performance Evaluation
-
-* Describe how to run the performance evaluation.
-
+Requirements:
+* pandas
+* numpy
+* matplotlib
+* seaborn
+* scikit-learn
 
 ## Citations
 
-* Provide any references.
-
+* Dataset from Kaggle: https://www.kaggle.com/datasets/uciml/mushroom-classification/data
 
 
 
