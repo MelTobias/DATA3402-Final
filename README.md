@@ -10,7 +10,7 @@ The goal is to classify mushrooms as edible or poisonous based solely on physica
 * Random Forest
 * K-Nearest Neighbors
 
-The best-performing model was Random Forest, which achieved a perfect score, which was common to others who worked with this dataset. The classification report and confusion matrix confirm strong performance across both classes.
+The best-performing model was Random Forest, which achieved a perfect score (100% accuracy), which was common to others who worked with this dataset. The classification report and confusion matrix confirm strong performance across both classes.
 
 ## Summary of Work Done
 
