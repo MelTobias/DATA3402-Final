@@ -21,8 +21,8 @@ The best-performing model was Random Forest, which achieved a perfect score (100
 * Size: 8124 instances total.
 
 #### Split:
-* Training set: 80%
-* Testing set: 20%
+* Training set: 80% (3950, 98)
+* Testing set: 20% (847, 98)
 
 #### Preprocessing / Clean up
 * Missing values were removed.
