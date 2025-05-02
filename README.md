@@ -40,8 +40,10 @@ Split:
 * Correlation heatmap using label-encoded values.
 * Feature importance visualization from Random Forest.
 
+
 ![](class.png)
 There is a slightly severe class imbalance: edible and poisonous mushrooms have a slight gap.
+
 
 ![](graphs.png)
 
