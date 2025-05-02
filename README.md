@@ -6,11 +6,16 @@
 
 ## Overview
 
-The goal is to classify mushrooms as edible or poisonous based solely on physical characteristics. The dataset contains only categorical features, making this a good test of models that can handle non-numeric input effectively. This project frames the problem as a binary classification task. The data was cleaned and label encoded, and two models were explored.
+The goal is to classify mushrooms as edible or poisonous based solely on physical characteristics. The dataset contains only categorical features, making this a good test of models that can handle non-numeric input effectively. This project frames the problem as a binary classification task. The data was cleaned and label encoded, and two models were explored:
+
 * Random Forest
 * K-Nearest Neighbors
 
 The best-performing model was Random Forest, which achieved a perfect score (100% accuracy), which was common to others who worked with this dataset. The classification report and confusion matrix confirm strong performance across both classes.
+
+At first, the perfect score raised concerns about possible overfitting or data leakage. However, after carefully double-checking the preprocessing pipeline, ensuring that the test set was properly separated, and comparing results across different model types, it became clear that this result was not a fluke. The dataset itself is inherently simple — certain physical traits (like odor or gill color) are so distinct between edible and poisonous mushrooms that even basic models can easily separate the classes.
+
+In this case, Random Forest was a simple, interpretable solution to a straightforward problem — and the unusually clean and separable nature of the dataset allowed for a genuine 100% accuracy without overfitting.
 
 ## Summary of Work Done
 
@@ -36,8 +41,6 @@ The best-performing model was Random Forest, which achieved a perfect score (100
 
 #### There is a slightly severe class imbalance: 
 * Edible and poisonous mushrooms have a slight gap.
-
-![](class.png)
 
 #### From the features, we observe:
 * Odor is a highly distinguishing feature — certain odors (like n and f) are almost exclusively associated with either edible or poisonous mushrooms.
