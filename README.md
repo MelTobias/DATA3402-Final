@@ -39,7 +39,7 @@ The best-performing model was Random Forest, which achieved a perfect score (100
 
 ![](class.png)
 
-#### From the feature, we observe:
+#### From the features, we observe:
 * Odor is a highly distinguishing feature — certain odors (like n and f) are almost exclusively associated with either edible or poisonous mushrooms.
 * Gill color and spore print color also show strong class separation, with some values appearing almost exclusively in one class.
 * Features like veil-type and ring-number show little to no variation and may not contribute significantly to classification performance.
