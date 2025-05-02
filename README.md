@@ -79,7 +79,10 @@ The best-performing model was Random Forest, which achieved a perfect score (100
 
 Metric: Accuracy and classification report (precision, recall, F1-score).
 
-![](table.png)
+| Model    | Accuracy |
+| ---      | ---       |
+| Random Forest | 1.0        |
+| KNN    | 0.9988        |
 
 #### Visualizations:
 * Confusion matrices for each model.
