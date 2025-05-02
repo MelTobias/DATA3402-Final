@@ -6,7 +6,7 @@
 
 ## Overview
 
-* Definition of the task/challenge:
+Definition of the task/challenge:
 The goal is to classify mushrooms as edible or poisonous based solely on physical characteristics. The dataset contains only categorical features, making this a good test of models that can handle non-numeric input effectively.
 
 Approach:
