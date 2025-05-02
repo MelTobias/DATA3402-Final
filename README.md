@@ -15,7 +15,7 @@ This project frames the problem as a binary classification task. The data was cl
 * K-Nearest Neighbors
 
 Performance summary:
-The best-performing model was Random Forest, which achieved a perfect score. The classification report and confusion matrix confirm strong performance across both classes.
+The best-performing model was Random Forest, which achieved a perfect score, which was common to others who worked with this dataset. The classification report and confusion matrix confirm strong performance across both classes.
 
 ## Summary of Work Done
 
