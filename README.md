@@ -34,12 +34,12 @@ The best-performing model was Random Forest, which achieved a perfect score (100
 * Count plots for class distribution and features.
 * Feature importance visualization from Random Forest.
 
-![](class.png)
 #### There is a slightly severe class imbalance: 
 * Edible and poisonous mushrooms have a slight gap.
 
-![](graphs.png)
+![](class.png)
 
+![](graphs.png)
 #### From the visualizations, we observe:
 * Odor is a highly distinguishing feature — certain odors (like n and f) are almost exclusively associated with either edible or poisonous mushrooms.
 * Gill color and spore print color also show strong class separation, with some values appearing almost exclusively in one class.
