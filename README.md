@@ -21,11 +21,11 @@ The best-performing model was Random Forest, which achieved a perfect score, whi
 
 ### Data
 
-Data:
+#### Data:
 * Type: CSV file with 22 categorical features and one target label (edible or poisonous).
 * Size: 8124 instances total.
 
-Split:
+#### Split:
 * Training set: 80%
 * Testing set: 20%
 
@@ -40,11 +40,12 @@ Split:
 * Feature importance visualization from Random Forest.
 
 ![](class.png)
-There is a slightly severe class imbalance: edible and poisonous mushrooms have a slight gap.
+#### There is a slightly severe class imbalance: 
+* Edible and poisonous mushrooms have a slight gap.
 
 ![](graphs.png)
 
-From the visualizations, we observe:
+#### From the visualizations, we observe:
 * Odor is a highly distinguishing feature — certain odors (like n and f) are almost exclusively associated with either edible or poisonous mushrooms.
 * Gill color and spore print color also show strong class separation, with some values appearing almost exclusively in one class.
 * Features like veil-type and ring-number show little to no variation and may not contribute significantly to classification performance.
@@ -56,27 +57,27 @@ From the visualizations, we observe:
 * Input: 22 physical characteristics of mushrooms (all categorical).
 * Output: Binary class (edible or poisonous).
 
-Models
+#### Models
 * Random Forest Classifier (performed best).
 * K-Nearest Neighbors (used for comparison).
 
-Hyperparameters:
+#### Hyperparameters:
 * Random Forest: default parameters
 * KNN: tested for different k values
 
 ### Training
 
-Environment:
+#### Environment:
 * Python (Jupyter Notebook & Google Collab)
 * Libraries: pandas, numpy, matplotlib, seaborn, scikit-learn
 
-Training time:
+#### Training time:
 * Very short (dataset is small, most models train in seconds on CPU).
 
-Stopping criteria:
+#### Stopping criteria:
 * No early stopping is required due to the short training time.
 
-Challenges:
+#### Challenges:
 * Categorical-only data required label encoding; some models were more sensitive to feature scaling.
 
 ### Performance Comparison
@@ -85,7 +86,7 @@ Metric: Accuracy and classification report (precision, recall, F1-score).
 
 ![](table.png)
 
-Visualizations:
+#### Visualizations:
 * Confusion matrices for each model.
 
 ![](scores.png)
@@ -124,7 +125,7 @@ No GPU or TPU is required due to the small size of the dataset and models.
 
 ### Software Setup
 
-Requirements:
+#### Requirements:
 * pandas
 * numpy
 * matplotlib
