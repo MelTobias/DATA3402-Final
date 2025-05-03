@@ -42,7 +42,9 @@ In this case, Random Forest was a simple, interpretable solution to a straightfo
 #### There is a slightly severe class imbalance: 
 * Edible and poisonous mushrooms have a slight gap.
 
-#### From the features, we observe:
+![](features.png)
+
+#### From some of the features, we can observe:
 * Odor is a highly distinguishing feature — certain odors (like n and f) are almost exclusively associated with either edible or poisonous mushrooms.
 * Gill color and spore print color also show strong class separation, with some values appearing almost exclusively in one class.
 * Features like veil-type and ring-number show little to no variation and may not contribute significantly to classification performance.
@@ -95,9 +97,9 @@ Metric: Accuracy and classification report (precision, recall, F1-score).
 
 Random Forest performed best with the highest accuracy and strong generalization. The dataset was clean and well-balanced, which helped model performance.
 
-Interestingly, Random Forest achieved a perfect 100% accuracy — a result that initially seemed too good to be true. However, after verifying the train-test split, reviewing the preprocessing pipeline, and testing with a second model (K-Nearest Neighbors), it became clear that the result was genuine. The categorical features in this dataset, such as odor and gill color, are so distinctly tied to edibility that they make the classification problem unusually easy.
+Interestingly, Random Forest achieved a perfect 100% accuracy, a result that initially seemed too good to be true. However, after verifying the train-test split, reviewing the preprocessing pipeline, and testing with a second model (K-Nearest Neighbors), it became clear that the result was genuine. The categorical features in this dataset, such as odor and gill color, are so distinctly tied to edibility that they make the classification problem unusually easy.
 
-This project shows that not every classification task is complex — some datasets are so clearly structured that even simple models can produce flawless results. In this case, Random Forest was not only effective but also elegantly sufficient to solve the problem.
+This project shows that not every classification task is complex; some datasets are so clearly structured that even simple models can produce flawless results. In this case, Random Forest was not only effective but also elegantly sufficient to solve the problem.
 
 ### Future Work
 
