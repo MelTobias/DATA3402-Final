@@ -15,7 +15,7 @@ The best-performing model was Random Forest, which achieved a perfect score (100
 
 At first, the perfect score raised concerns about possible overfitting or data leakage. However, after carefully double-checking the preprocessing pipeline, ensuring that the test set was properly separated, and comparing results across different model types, it became clear that this result was not a fluke. The dataset itself is inherently simple — certain physical traits (like odor or gill color) are so distinct between edible and poisonous mushrooms that even basic models can easily separate the classes.
 
-In this case, Random Forest was a simple, interpretable solution to a straightforward problem — and the unusually clean and separable nature of the dataset allowed for a genuine 100% accuracy without overfitting.
+In this case, Random Forest was a simple, interpretable solution to a straightforward problem, and the unusually clean and separable nature of the dataset allowed for a genuine 100% accuracy without overfitting.
 
 ## Summary of Work Done
 
@@ -49,7 +49,7 @@ In this case, Random Forest was a simple, interpretable solution to a straightfo
 * Gill color and spore print color also show strong class separation, with some values appearing almost exclusively in one class.
 * Features like veil-type and ring-number show little to no variation and may not contribute significantly to classification performance.
 * Bruises and gill-spacing offer moderate separation, possibly aiding model learning.
-* Other features like cap-shape or habitat are more evenly distributed across classes and might be less predictive individually but still useful when combined with others.
+* Other features like cap-shape or habitat are more evenly distributed across classes and might be less predictive individually, but still useful when combined with others.
 
 ### Problem Formulation
 
@@ -84,9 +84,9 @@ In this case, Random Forest was a simple, interpretable solution to a straightfo
 Metric: Accuracy and classification report (precision, recall, F1-score).
 
 | Model    | Accuracy |
-| ---      | ---       |
-| Random Forest | 1.0        |
-| KNN    | 0.9988        |
+| ---      | ---      |
+| Random Forest | 1.0 |
+| KNN    | 0.9988     |
 
 #### Visualizations:
 * Confusion matrices for each model.
@@ -104,6 +104,7 @@ This project shows that not every classification task is complex; some datasets 
 ### Future Work
 
 * Test more advanced models (e.g., XGBoost, LightGBM).
+* Test on other mushroom datasets to ensure accuracy.
 * Try feature selection to reduce dimensionality.
 * Investigate model interpretability tools (e.g., SHAP values).
 
